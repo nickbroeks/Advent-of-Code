@@ -30,10 +30,14 @@ impl Day for Day01 {
     fn part2(&self, input: &str) -> String {
         read_input(input)
             .pipe(|(first_list, second_list)| {
-                let mut map_second_list: HashMap<u32, u32> = HashMap::new();
-                for num in second_list {
-                    map_second_list.insert(num, map_second_list.get(&num).unwrap_or(&0) + 1);
-                }
+                let map_second_list =
+                    second_list
+                        .into_iter()
+                        .fold(HashMap::new(), |mut map, num| {
+                            *map.entry(num).or_insert(0) += 1;
+                            map
+                        });
+
                 first_list
                     .iter()
                     .map(|num| num * map_second_list.get(num).unwrap_or(&0))
