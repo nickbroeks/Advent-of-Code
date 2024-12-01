@@ -4,6 +4,7 @@ mod day;
 mod day01;
 
 use day::Day;
+use day01::Day01;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -18,7 +19,7 @@ fn main() {
     let input_path = format!("inputs/day{:02}.txt", day);
 
     // Initialize available days
-    let solutions: [Box<dyn Day>; 0] = [];
+    let solutions = [Box::new(Day01)];
 
     // Run the selected day's solution
     let solution = solutions
