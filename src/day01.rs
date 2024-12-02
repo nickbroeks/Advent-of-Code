@@ -1,16 +1,9 @@
 use std::collections::HashMap;
 
 use crate::day::Day;
+use crate::util::Pipe;
 
 pub struct Day01;
-
-trait Pipe: Sized {
-    fn pipe<T>(self, f: impl FnOnce(Self) -> T) -> T {
-        f(self)
-    }
-}
-
-impl<T: Sized> Pipe for T {}
 
 impl Day for Day01 {
     fn part1(&self, input: &str) -> String {

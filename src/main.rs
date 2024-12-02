@@ -2,9 +2,12 @@ use std::env;
 
 mod day;
 mod day01;
+mod day02;
+mod util;
 
 use day::Day;
 use day01::Day01;
+use day02::Day02;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -19,7 +22,7 @@ fn main() {
     let input_path = format!("inputs/day{:02}.txt", day);
 
     // Initialize available days
-    let solutions = [Box::new(Day01)];
+    let solutions: [Box<dyn Day>; 2] = [Box::new(Day01), Box::new(Day02)];
 
     // Run the selected day's solution
     let solution = solutions
