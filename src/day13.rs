@@ -25,7 +25,7 @@ impl Day for Day13 {
             .to_string()
     }
 
-    fn part2(&self, input: &str) -> String {
+    fn part2(&self, _input: &str) -> String {
         return "Done with python z3 since Gurobi and rust didnt work".to_string();
     }
 }
