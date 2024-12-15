@@ -15,6 +15,7 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 mod util;
 
 use day::Day;
@@ -32,6 +33,7 @@ use day11::Day11;
 use day12::Day12;
 use day13::Day13;
 use day14::Day14;
+use day15::Day15;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -61,6 +63,7 @@ fn main() {
         Box::new(Day12),
         Box::new(Day13),
         Box::new(Day14),
+        Box::new(Day15),
     ];
 
     // Run the selected day's solution
