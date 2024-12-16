@@ -34,7 +34,7 @@ impl Day for Day14 {
         let input = parse_input(input);
         for i in 0..10000 {
             let mut canvas: Vec<Vec<char>> = (0..h)
-                .map(|y| (0..w).map(|_| ' ').collect::<Vec<_>>())
+                .map(|_y| (0..w).map(|_| ' ').collect::<Vec<_>>())
                 .collect::<Vec<_>>();
             for &(pos, vel) in input.iter() {
                 canvas[(pos.1 + vel.1 * i).rem_euclid(h) as usize]
